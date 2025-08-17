@@ -1,6 +1,4 @@
-%% Therapist Analytics POC — Architecture 
 flowchart LR
- flowchart LR
   A["Patient App"] --> B["Cloud Run API"]
   B --> C["Pub/Sub Topic (Avro, CMEK)"]
   C --> D["Dataflow (Beam) - trim/validate"]
