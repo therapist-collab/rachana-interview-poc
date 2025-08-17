@@ -1,13 +1,28 @@
 %% Therapist Analytics POC — Architecture 
 flowchart LR
-  A[Patient App] --> B[Cloud Run API]
-  B --> C[Pub/Sub Topic (Avro, CMEK)]
-  C --> D[Dataflow (Beam)]
-  D --> E[GCS Buckets (CMEK)]
-  E --> F[Composer DAGs]
-  F --> G[BigQuery Tables]
-  F --> H[Vertex AI Gemini]
-  I[Cloud Run Summary Service] --> G
-  J[Cloud Run License Verify] --> G
-  K[KMS CMEK] --- C & D & E & G
-  L[Cloud Monitoring + Audit Logs] --- B & C & D & E & F & G & I & J
+ flowchart LR
+  A["Patient App"] --> B["Cloud Run API"]
+  B --> C["Pub/Sub Topic (Avro, CMEK)"]
+  C --> D["Dataflow (Beam) - trim/validate"]
+  D --> E["GCS Buckets (CMEK)"]
+  E --> F["Composer DAGs - ETL, retries"]
+  F --> G["BigQuery: session_events, message_analytics, session_summaries, therapist_licenses"]
+  F --> H["Vertex AI (Gemini): themes & sentiment"]
+  I["Cloud Run: Summary Service"] --> G
+  J["Cloud Run: CA License Verify"] --> G
+
+  %% KMS connections
+  K["KMS (CMEK keys)"] --- C
+  K --- D
+  K --- E
+  K --- G
+
+  %% Audit/logging connections
+  L["Cloud Monitoring + Audit Logs"] --- B
+  L --- C
+  L --- D
+  L --- E
+  L --- F
+  L --- G
+  L --- I
+  L --- J
