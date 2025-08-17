@@ -1,0 +1,5 @@
+{"session_id":"S-0001","therapist_id":"TherapistA","patient_id":"PatientX","ts":"2025-08-10T10:20:00Z","text":"Work was rough this week—deadlines piled up and I felt overwhelmed.","audio_uri":null}
+{"session_id":"S-0001","therapist_id":"TherapistA","patient_id":"PatientX","ts":"2025-08-11T22:15:00Z","text":"I’m worried about rent—money is tighter than I expected.","audio_uri":null}
+{"session_id":"S-0001","therapist_id":"TherapistA","patient_id":"PatientX","ts":"2025-08-12T01:05:00Z","text":"Couldn’t sleep last night, tried some breathing exercises which helped a bit.","audio_uri":null}
+{"session_id":"S-0001","therapist_id":"TherapistA","patient_id":"PatientX","ts":"2025-08-13T18:40:00Z","text":"I talked with a close friend today and felt a bit more hopeful.","audio_uri":null}
+{"session_id":"S-0001","therapist_id":"TherapistA","patient_id":"PatientX","ts":"2025-08-14T07:30:00Z","text":"Recorded a short voice note about my work priorities.","audio_uri":"gs://raw-audio/sample-note-01.wav"}
