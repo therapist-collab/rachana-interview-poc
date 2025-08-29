@@ -11,6 +11,8 @@ Success = running on synthetic data, HIPAA-aware, with a working demo flow and c
 - Least-privilege IAM, audit logs enabled  
 - No PHI in logs, TLS enforced  
 - Append-only `session_events` table
+- VPC Service Controls (perimeter) + Private Google Access on data services
+
 
 ## Synthetic Dataset
 - Therapist: **TherapistA**  
@@ -34,6 +36,8 @@ Success = running on synthetic data, HIPAA-aware, with a working demo flow and c
 - Vertex AI: ≤10 calls/day  
 - Cloud Run: within free tier (2M requests/month)  
 - DCA API: free
+- KMS: 1 CMEK key (90-day rotation) bound to Pub/Sub, GCS, BigQuery; Data Access logs enabled
+
 
 ## Full Flow (MVP)
 Patient message → **Pub/Sub** → **Dataflow (clean/validate)** → **GCS (raw + staging)** → **Composer DAG** → **BigQuery** (`session_events`) →  

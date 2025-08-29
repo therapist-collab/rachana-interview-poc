@@ -1,0 +1,451 @@
+﻿
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # google_bigquery_dataset.ds will be created
+  + resource "google_bigquery_dataset" "ds" {
+      + creation_time              = (known after apply)
+      + dataset_id                 = "thera_poc"
+      + default_collation          = (known after apply)
+      + delete_contents_on_destroy = false
+      + effective_labels           = {
+          + "env" = "poc"
+        }
+      + etag                       = (known after apply)
+      + id                         = (known after apply)
+      + is_case_insensitive        = (known after apply)
+      + labels                     = {
+          + "env" = "poc"
+        }
+      + last_modified_time         = (known after apply)
+      + location                   = "US"
+      + max_time_travel_hours      = (known after apply)
+      + project                    = "rachana-interview-poc"
+      + self_link                  = (known after apply)
+      + storage_billing_model      = (known after apply)
+      + terraform_labels           = {
+          + "env" = "poc"
+        }
+
+      + access (known after apply)
+
+      + default_encryption_configuration {
+          + kms_key_name = (known after apply)
+        }
+    }
+
+  # google_bigquery_table.message_analytics will be created
+  + resource "google_bigquery_table" "message_analytics" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "thera_poc"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "env" = "poc"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "env" = "poc"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "rachana-interview-poc"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "REQUIRED"
+                  + name = "week_start"
+                  + type = "DATE"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "session_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "theme"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "sentiment"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "message_count"
+                  + type = "INTEGER"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "message_analytics"
+      + terraform_labels                = {
+          + "env" = "poc"
+        }
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.session_events will be created
+  + resource "google_bigquery_table" "session_events" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "thera_poc"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "env" = "poc"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "env" = "poc"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "rachana-interview-poc"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "REQUIRED"
+                  + name = "session_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "therapist_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "patient_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "ts"
+                  + type = "TIMESTAMP"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "text"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "audio_uri"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "source"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "ingest_id"
+                  + type = "STRING"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "session_events"
+      + terraform_labels                = {
+          + "env" = "poc"
+        }
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.session_summaries will be created
+  + resource "google_bigquery_table" "session_summaries" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "thera_poc"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "env" = "poc"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "env" = "poc"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "rachana-interview-poc"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "REQUIRED"
+                  + name = "session_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "summary"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "model"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "created_at"
+                  + type = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "session_summaries"
+      + terraform_labels                = {
+          + "env" = "poc"
+        }
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.therapist_licenses will be created
+  + resource "google_bigquery_table" "therapist_licenses" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "thera_poc"
+      + deletion_protection             = true
+      + effective_labels                = {
+          + "env" = "poc"
+        }
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + labels                          = {
+          + "env" = "poc"
+        }
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "rachana-interview-poc"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "REQUIRED"
+                  + name = "therapist_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "license_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "status"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "status_detail"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "REQUIRED"
+                  + name = "last_checked"
+                  + type = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "therapist_licenses"
+      + terraform_labels                = {
+          + "env" = "poc"
+        }
+      + type                            = (known after apply)
+    }
+
+  # google_kms_crypto_key.cmek will be created
+  + resource "google_kms_crypto_key" "cmek" {
+      + crypto_key_backend         = (known after apply)
+      + destroy_scheduled_duration = (known after apply)
+      + effective_labels           = {
+          + "env" = "poc"
+        }
+      + id                         = (known after apply)
+      + import_only                = (known after apply)
+      + key_ring                   = (known after apply)
+      + labels                     = {
+          + "env" = "poc"
+        }
+      + name                       = "thera-cmek"
+      + primary                    = (known after apply)
+      + purpose                    = "ENCRYPT_DECRYPT"
+      + rotation_period            = "7776000s"
+      + terraform_labels           = {
+          + "env" = "poc"
+        }
+
+      + version_template (known after apply)
+    }
+
+  # google_kms_key_ring.ring will be created
+  + resource "google_kms_key_ring" "ring" {
+      + id       = (known after apply)
+      + location = "us-central1"
+      + name     = "thera-keyring"
+      + project  = "rachana-interview-poc"
+    }
+
+  # google_pubsub_topic.patient will be created
+  + resource "google_pubsub_topic" "patient" {
+      + effective_labels           = {
+          + "env" = "poc"
+        }
+      + id                         = (known after apply)
+      + kms_key_name               = (known after apply)
+      + labels                     = {
+          + "env" = "poc"
+        }
+      + message_retention_duration = "604800s"
+      + name                       = "thera-session-events"
+      + project                    = "rachana-interview-poc"
+      + terraform_labels           = {
+          + "env" = "poc"
+        }
+
+      + message_storage_policy {
+          + allowed_persistence_regions = [
+              + "us-central1",
+            ]
+        }
+
+      + schema_settings {
+          + encoding = "JSON"
+          + schema   = "projects/rachana-interview-poc/schemas/thera-session-schema"
+        }
+    }
+
+  # google_storage_bucket.raw_audio will be created
+  + resource "google_storage_bucket" "raw_audio" {
+      + effective_labels            = {
+          + "env"     = "poc"
+          + "purpose" = "raw-audio"
+        }
+      + force_destroy               = true
+      + id                          = (known after apply)
+      + labels                      = {
+          + "env"     = "poc"
+          + "purpose" = "raw-audio"
+        }
+      + location                    = "US"
+      + name                        = "rachana-interview-poc-thera-raw-audio"
+      + project                     = (known after apply)
+      + project_number              = (known after apply)
+      + public_access_prevention    = (known after apply)
+      + rpo                         = (known after apply)
+      + self_link                   = (known after apply)
+      + storage_class               = "STANDARD"
+      + terraform_labels            = {
+          + "env"     = "poc"
+          + "purpose" = "raw-audio"
+        }
+      + uniform_bucket_level_access = true
+      + url                         = (known after apply)
+
+      + encryption {
+          + default_kms_key_name = (known after apply)
+        }
+
+      + lifecycle_rule {
+          + action {
+              + type          = "Delete"
+                # (1 unchanged attribute hidden)
+            }
+          + condition {
+              + age                    = 14
+              + matches_prefix         = []
+              + matches_storage_class  = []
+              + matches_suffix         = []
+              + send_age_if_zero       = true
+              + with_state             = (known after apply)
+                # (3 unchanged attributes hidden)
+            }
+        }
+
+      + soft_delete_policy (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # google_storage_bucket.staging_events will be created
+  + resource "google_storage_bucket" "staging_events" {
+      + effective_labels            = {
+          + "env"     = "poc"
+          + "purpose" = "staging-events"
+        }
+      + force_destroy               = true
+      + id                          = (known after apply)
+      + labels                      = {
+          + "env"     = "poc"
+          + "purpose" = "staging-events"
+        }
+      + location                    = "US"
+      + name                        = "rachana-interview-poc-thera-staging-events"
+      + project                     = (known after apply)
+      + project_number              = (known after apply)
+      + public_access_prevention    = (known after apply)
+      + rpo                         = (known after apply)
+      + self_link                   = (known after apply)
+      + storage_class               = "STANDARD"
+      + terraform_labels            = {
+          + "env"     = "poc"
+          + "purpose" = "staging-events"
+        }
+      + uniform_bucket_level_access = true
+      + url                         = (known after apply)
+
+      + encryption {
+          + default_kms_key_name = (known after apply)
+        }
+
+      + lifecycle_rule {
+          + action {
+              + type          = "Delete"
+                # (1 unchanged attribute hidden)
+            }
+          + condition {
+              + age                    = 14
+              + matches_prefix         = []
+              + matches_storage_class  = []
+              + matches_suffix         = []
+              + send_age_if_zero       = true
+              + with_state             = (known after apply)
+                # (3 unchanged attributes hidden)
+            }
+        }
+
+      + soft_delete_policy (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+Plan: 10 to add, 0 to change, 0 to destroy.
